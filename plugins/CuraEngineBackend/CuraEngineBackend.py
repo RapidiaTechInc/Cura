@@ -90,7 +90,7 @@ class CuraEngineBackend(QObject, Backend):
             raise EnvironmentError("Could not find CuraEngine")
 
         Logger.log("i", "Found CuraEngine at: %s", default_engine_location)
-
+        Logger.log("i", self.getEngineCommand())
         default_engine_location = os.path.abspath(default_engine_location)
         self._application.getPreferences().addPreference("backend/location", default_engine_location)
 
